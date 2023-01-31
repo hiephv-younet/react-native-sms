@@ -36,9 +36,9 @@ public class SendSMSModule extends ReactContextBaseJavaModule implements Activit
     public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
         //System.out.println("in module onActivityResult() request " + requestCode + " result " + resultCode);
         //canceled intent
-        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_CANCELED) {
-            sendCallback(false, true, false);
-        }
+//         if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_CANCELED) {
+//             sendCallback(false, true, false);
+//         }
     }
 
     @Override
@@ -83,7 +83,7 @@ public class SendSMSModule extends ReactContextBaseJavaModule implements Activit
 
             sendIntent.putExtra("sms_body", body);
             sendIntent.putExtra(sendIntent.EXTRA_TEXT, body);
-            sendIntent.putExtra("exit_on_sent", true);
+//             sendIntent.putExtra("exit_on_sent", true);
 
             if (attachment != null) {
                 Uri attachmentUrl = Uri.parse(attachment.getString("url"));
